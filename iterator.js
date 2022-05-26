@@ -149,11 +149,23 @@ Challenge 7
 Build a function that walks through an array and returns the element concatenated with the string "was found after index x", where x is the previous index.
 Note: if it is the first element it should say that it is the first
 */
+function valueAndPrevIndex(array) {
+  let index = 0;
+  return {
+    sentence: function () {
+      index++;
+      let indexName = index;
+      if (index - 1 === 0) {
+        indexName = 'first';
+      }
+      return '' + array[index - 1] + ' was found after index ' + indexName;
+    },
+  };
+}
 /*
 Challenge 8
 Write a function that will console.log "hello there", or "gibberish", every three seconds depending on if the word passed into the function is 'english'.
 Do not use any type of loop constructor and only make the call to createConversation once.
-
 */
 /*
 Challenge 9
