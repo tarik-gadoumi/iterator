@@ -167,6 +167,17 @@ Challenge 8
 Write a function that will console.log "hello there", or "gibberish", every three seconds depending on if the word passed into the function is 'english'.
 Do not use any type of loop constructor and only make the call to createConversation once.
 */
+function* createConversation(str) {
+  yield setInterval(function () {
+    if (str == 'english') {
+      console.log('hello there');
+    } else {
+      console.log('gibberish');
+    }
+  }, 3000);
+}
+
+createConversation('english').next();
 /*
 Challenge 9
 Use async/await to console.log a sentence comprised of a noun and verb in which the non async function takes in a noun, concatenates it with a hard coded verb and returns it to the async function to be console.logged after a duration of 3 seconds. Call the async function only once, feeding it a noun to make this happen.
